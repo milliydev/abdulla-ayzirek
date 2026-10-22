@@ -55,7 +55,7 @@ button{font:inherit;cursor:pointer}
 .cv-text>*:nth-child(1){animation-delay:2.1s}.cv-text>*:nth-child(2){animation-delay:2.4s}.cv-text>*:nth-child(3){animation-delay:2.8s}
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .cv-names{font-family:var(--display);font-weight:600;font-size:clamp(30px,8.5vw,44px);color:var(--gold-d);margin:18px 0 4px;line-height:1.15}
-.cv-sub{font-family:var(--sans);font-size:12px;letter-spacing:.3em;color:var(--muted);margin:0 0 30px}
+.cv-sub{font-family:var(--sans);font-size:12px;letter-spacing:.3em;color:var(--muted);margin:0 0 22px}
 
 .gbtn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 34px;border:0;border-radius:999px;background:linear-gradient(135deg,#d9b765,#b08436 55%,#8a6420);color:#fff;font-family:var(--sans);font-size:13px;letter-spacing:.2em;text-decoration:none;box-shadow:0 8px 22px rgba(138,100,32,.28)}
 .gbtn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3s ease-in-out infinite}
@@ -83,9 +83,10 @@ button{font:inherit;cursor:pointer}
 .line{font-style:italic;font-size:clamp(19px,5vw,22px);line-height:1.5;color:var(--muted);margin:0 auto;max-width:28ch}
 .poem small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.3em;color:var(--gold);margin-bottom:8px}
 .poem p{margin:0;font-style:italic;font-size:clamp(18px,4.8vw,21px);line-height:1.5;color:var(--muted)}
-.poem span{display:block;opacity:0;transform:translateY(10px);transition:opacity .9s ease,transform .9s ease}
-.opened .poem span{opacity:1;transform:none}
-.opened .poem span:nth-child(1){transition-delay:1s}.opened .poem span:nth-child(2){transition-delay:1.5s}.opened .poem span:nth-child(3){transition-delay:2s}.opened .poem span:nth-child(4){transition-delay:2.5s}
+.poem{margin:0 auto 26px;max-width:30ch}
+.poem span{display:block;opacity:0;animation:up .9s ease both}
+.poem span:nth-child(1){animation-delay:2.9s}.poem span:nth-child(2){animation-delay:3.3s}.poem span:nth-child(3){animation-delay:3.7s}.poem span:nth-child(4){animation-delay:4.1s}
+.cv-text>*:nth-child(4){animation-delay:4.5s}
 .orn{display:flex;align-items:center;gap:12px;margin:clamp(14px,2.6vh,24px) auto;max-width:220px}
 .orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--line)}
 .orn i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
@@ -131,6 +132,10 @@ button{font:inherit;cursor:pointer}
   <div class="cv-text">
     <p class="cv-names">Абдулла &amp; Айзирек</p>
     <p class="cv-sub">ҮЙЛӨНҮҮ ТОЮНА ЧАКЫРУУ</p>
+    <div class="poem">
+      <small>ЧАКЫРУУ</small>
+      <p><span>Аткарылып арзуу тилек оюбуз</span><span>Эртең болот ак никелүү тоюбуз</span><span>Экөөбүздүн эң алгачкы тоюбузда</span><span>Ардактаган коногубуз болуңуз</span></p>
+    </div>
     <div><button class="gbtn" id="openBtn">ЧАКЫРУУНУ АЧУУ</button></div>
   </div>
 </div>
@@ -145,10 +150,7 @@ button{font:inherit;cursor:pointer}
   <div class="card">
     <p class="kick">ҮЙЛӨНҮҮ ТОЮ</p>
     <h1 class="names"><span class="n">Абдулла</span><span class="a">жана</span><span class="n">Айзирек</span></h1>
-    <div class="poem">
-      <small>ЧАКЫРУУ</small>
-      <p><span>Аткарылып арзуу тилек оюбуз</span><span>Эртең болот ак никелүү тоюбуз</span><span>Экөөбүздүн эң алгачкы тоюбузда</span><span>Ардактаган коногубуз болуңуз</span></p>
-    </div>
+    <p class="line">Ак никелүү тоюбузга кадырлуу коногубуз болуңуз!</p>
     <div class="orn"><i></i></div>
     <div class="dates">
       <div><div class="d-day">30</div><div class="d-mon">ОКТЯБРЬ</div><div class="d-time">Жума · 17:30</div></div>
