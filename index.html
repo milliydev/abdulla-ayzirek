@@ -81,6 +81,11 @@ button{font:inherit;cursor:pointer}
 .names .a{display:block;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(28px,7vw,38px);margin:2px 0}
 .mini-hands{width:110px;margin:0 auto;display:block}
 .line{font-style:italic;font-size:clamp(19px,5vw,22px);line-height:1.5;color:var(--muted);margin:0 auto;max-width:28ch}
+.poem small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.3em;color:var(--gold);margin-bottom:8px}
+.poem p{margin:0;font-style:italic;font-size:clamp(18px,4.8vw,21px);line-height:1.5;color:var(--muted)}
+.poem span{display:block;opacity:0;transform:translateY(10px);transition:opacity .9s ease,transform .9s ease}
+.opened .poem span{opacity:1;transform:none}
+.opened .poem span:nth-child(1){transition-delay:1s}.opened .poem span:nth-child(2){transition-delay:1.5s}.opened .poem span:nth-child(3){transition-delay:2s}.opened .poem span:nth-child(4){transition-delay:2.5s}
 .orn{display:flex;align-items:center;gap:12px;margin:clamp(14px,2.6vh,24px) auto;max-width:220px}
 .orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--line)}
 .orn i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
@@ -104,7 +109,7 @@ button{font:inherit;cursor:pointer}
 @keyframes spin{to{transform:rotate(360deg)}}
 .toast{position:fixed;left:50%;bottom:calc(80px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-family:var(--sans);font-size:12px;opacity:0;transition:all .3s;z-index:30;pointer-events:none}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.cv-text>*,.card>*{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.cv-text>*,.card>*,.poem span{opacity:1;transform:none}}
 </style>
 </head>
 <body class="locked">
@@ -140,7 +145,10 @@ button{font:inherit;cursor:pointer}
   <div class="card">
     <p class="kick">ҮЙЛӨНҮҮ ТОЮ</p>
     <h1 class="names"><span class="n">Абдулла</span><span class="a">жана</span><span class="n">Айзирек</span></h1>
-    <p class="line">Ак никелүү тоюбузга кадырлуу коногубуз болуңуз!</p>
+    <div class="poem">
+      <small>ЧАКЫРУУ</small>
+      <p><span>Аткарылып аруу тилек ойубуз</span><span>Ертен болот ак никелуу тойубуз</span><span>Екообуздун ен алгачкы тойубузда</span><span>Ардактаган коногубуз болунуз</span></p>
+    </div>
     <div class="orn"><i></i></div>
     <div class="dates">
       <div><div class="d-day">30</div><div class="d-mon">ОКТЯБРЬ</div><div class="d-time">Жума · 17:30</div></div>
