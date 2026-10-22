@@ -52,7 +52,7 @@ button{font:inherit;cursor:pointer}
 .emo.basic .es{animation-delay:.3s}
 .emo.basic .heart-e{animation-delay:.9s,1.6s}
 .cv-text>*{opacity:0;animation:up .9s ease both}
-.cv-text>*:nth-child(1){animation-delay:2.1s}.cv-text>*:nth-child(2){animation-delay:2.4s}.cv-text>*:nth-child(3){animation-delay:2.8s}
+.cv-text>*:nth-child(1){animation-delay:2.1s}
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .cv-names{font-family:var(--display);font-weight:600;font-size:clamp(30px,8.5vw,44px);color:var(--gold-d);margin:18px 0 4px;line-height:1.15}
 .cv-sub{font-family:var(--sans);font-size:12px;letter-spacing:.3em;color:var(--muted);margin:0 0 22px}
@@ -85,8 +85,8 @@ button{font:inherit;cursor:pointer}
 .poem p{margin:0;font-style:italic;font-size:clamp(18px,4.8vw,21px);line-height:1.5;color:var(--muted)}
 .poem{margin:0 auto 26px;max-width:30ch}
 .poem span{display:block;opacity:0;animation:up .9s ease both}
-.poem span:nth-child(1){animation-delay:2.9s}.poem span:nth-child(2){animation-delay:3.3s}.poem span:nth-child(3){animation-delay:3.7s}.poem span:nth-child(4){animation-delay:4.1s}
-.cv-text>*:nth-child(4){animation-delay:4.5s}
+.poem span:nth-child(1){animation-delay:2.4s}.poem span:nth-child(2){animation-delay:2.8s}.poem span:nth-child(3){animation-delay:3.2s}.poem span:nth-child(4){animation-delay:3.6s}
+.cv-text>.poem{margin-top:18px}.cv-text>*:nth-child(2){animation-delay:4s}
 .orn{display:flex;align-items:center;gap:12px;margin:clamp(14px,2.6vh,24px) auto;max-width:220px}
 .orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--line)}
 .orn i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
@@ -130,8 +130,6 @@ button{font:inherit;cursor:pointer}
     <span class="eh es">🫱🏻&#8205;🫲🏼</span>
   </div>
   <div class="cv-text">
-    <p class="cv-names">Абдулла &amp; Айзирек</p>
-    <p class="cv-sub">ҮЙЛӨНҮҮ ТОЮНА ЧАКЫРУУ</p>
     <div class="poem">
       <small>ЧАКЫРУУ</small>
       <p><span>Аткарылып арзуу тилек оюбуз</span><span>Эртең болот ак никелүү тоюбуз</span><span>Экөөбүздүн эң алгачкы тоюбузда</span><span>Ардактаган коногубуз болуңуз</span></p>
