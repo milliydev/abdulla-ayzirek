@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Абдулла & Айзирек | Үйлөнүү тоюна чакыруу</title>
+<meta name="description" content="Абдулла менен Айзиректин үйлөнүү тоюна чакырабыз. 30–31-октябрь 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --ink:#2d2618; --muted:#7c6e55; --gold:#b08436; --gold-l:#d9b765; --gold-d:#8a6420; --line:rgba(176,132,54,.4);
+  --display:"Playfair Display",Georgia,"Times New Roman",serif; --serif:"Cormorant Garamond",Georgia,serif; --sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); color-scheme:light;
+}
+:root[data-theme="dark"]{color-scheme:light}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);overflow-x:hidden}
+body.locked{overflow:hidden}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+#spark{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+
+/* ===== Ochilish: qo'llar ===== */
+.cover{position:fixed;inset:0;z-index:20;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .9s ease,visibility 0s linear .9s}
+.cover.gone{opacity:0;visibility:hidden}
+.hands{width:min(94vw,520px);height:auto;overflow:visible}
+.L{animation:inL 1.8s cubic-bezier(.2,.8,.2,1) both}
+.R{animation:inR 1.8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes inL{from{transform:translateX(-190px);opacity:0}40%{opacity:1}to{transform:none}}
+@keyframes inR{from{transform:translateX(190px);opacity:0}40%{opacity:1}to{transform:none}}
+.heart{transform-origin:200px 54px;animation:heartIn .7s cubic-bezier(.3,1.6,.5,1) 1.7s both,beat 1.6s ease-in-out 2.6s infinite}
+@keyframes heartIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}45%{transform:scale(1.1)}}
+.ring-glint{opacity:0;transform-origin:239px 100px;animation:glint 2.4s ease-in-out 2s infinite}
+@keyframes glint{0%,100%{opacity:0;transform:scale(.4) rotate(0)}20%{opacity:1;transform:scale(1) rotate(45deg)}40%{opacity:0;transform:scale(.4) rotate(90deg)}}
+.emo{position:relative;width:min(90vw,420px);height:170px;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.eh{position:absolute;top:40px;font-size:110px;line-height:1;filter:drop-shadow(0 8px 14px rgba(120,80,40,.2))}
+.el{left:50%;transform:translateX(-112%);animation:hl 1.5s cubic-bezier(.2,.8,.2,1) both,hideH .3s ease 1.5s forwards}
+.er{left:50%;transform:translateX(12%);animation:hr 1.5s cubic-bezier(.2,.8,.2,1) both,hideH .3s ease 1.5s forwards}
+@keyframes hl{from{transform:translateX(-260%);opacity:0}30%{opacity:1}to{transform:translateX(-112%)}}
+@keyframes hr{from{transform:translateX(160%);opacity:0}30%{opacity:1}to{transform:translateX(12%)}}
+@keyframes hideH{to{opacity:0}}
+.es{left:50%;transform:translateX(-50%) scale(.6);opacity:0;animation:clasp .7s cubic-bezier(.3,1.5,.5,1) 1.45s forwards}
+@keyframes clasp{to{transform:translateX(-50%) scale(1);opacity:1}}
+.heart-e{position:absolute;left:50%;top:0;font-size:34px;transform:translateX(-50%) scale(0);animation:heartE .6s cubic-bezier(.3,1.6,.5,1) 2s forwards,beatE 1.6s ease-in-out 2.7s infinite}
+@keyframes heartE{to{transform:translateX(-50%) scale(1)}}
+@keyframes beatE{0%,100%{transform:translateX(-50%) scale(1)}15%{transform:translateX(-50%) scale(1.2)}30%{transform:translateX(-50%) scale(1)}}
+.emo.basic .el,.emo.basic .er{display:none}
+.emo.basic .es{animation-delay:.3s}
+.emo.basic .heart-e{animation-delay:.9s,1.6s}
+.cv-text>*{opacity:0;animation:up .9s ease both}
+.cv-text>*:nth-child(1){animation-delay:2.1s}.cv-text>*:nth-child(2){animation-delay:2.4s}.cv-text>*:nth-child(3){animation-delay:2.8s}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.cv-names{font-family:var(--display);font-weight:600;font-size:clamp(30px,8.5vw,44px);color:var(--gold-d);margin:18px 0 4px;line-height:1.15}
+.cv-sub{font-family:var(--sans);font-size:12px;letter-spacing:.3em;color:var(--muted);margin:0 0 30px}
+
+.gbtn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 34px;border:0;border-radius:999px;background:linear-gradient(135deg,#d9b765,#b08436 55%,#8a6420);color:#fff;font-family:var(--sans);font-size:13px;letter-spacing:.2em;text-decoration:none;box-shadow:0 8px 22px rgba(138,100,32,.28)}
+.gbtn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3s ease-in-out infinite}
+@keyframes shine{0%,55%{left:-60%}100%{left:130%}}
+.obtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:999px;border:1.5px solid var(--gold);background:#fff;color:var(--gold-d);font-family:var(--sans);font-size:12px;letter-spacing:.15em;text-decoration:none;transition:all .25s}
+.obtn:hover{background:var(--gold);color:#fff}
+
+/* ===== Bitta ekran ===== */
+.page{position:relative;z-index:2;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:clamp(28px,5vh,48px) 22px}
+.frame{position:fixed;inset:12px;border:1px solid var(--line);pointer-events:none;z-index:3;opacity:0;transition:opacity 1.2s ease}
+.frame::after{content:"";position:absolute;inset:6px;border:1px solid rgba(176,132,54,.18)}
+.corner{position:fixed;width:58px;height:58px;z-index:3;pointer-events:none;opacity:0;transition:opacity 1.2s ease .3s}
+.corner.tl{top:6px;left:6px}.corner.tr{top:6px;right:6px;transform:scaleX(-1)}.corner.bl{bottom:6px;left:6px;transform:scaleY(-1)}.corner.br{bottom:6px;right:6px;transform:scale(-1)}
+.opened .frame,.opened .corner{opacity:1}
+.card{width:100%;max-width:440px;text-align:center}
+.card>*{opacity:0;transform:translateY(20px);transition:opacity 1s ease,transform 1s ease}
+.opened .card>*{opacity:1;transform:none}
+.kick{font-family:var(--sans);font-size:12px;letter-spacing:.35em;color:var(--gold);margin:0}
+.names{font-family:var(--display);font-weight:600;line-height:1.05;margin:clamp(10px,2vh,18px) 0;
+  background:linear-gradient(100deg,#8a6420 0%,#b08436 40%,#d9b765 50%,#b08436 60%,#8a6420 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:goldText 5s linear infinite}
+@keyframes goldText{from{background-position:100% 0}to{background-position:-150% 0}}
+.names .n{display:block;font-size:clamp(44px,13vw,70px)}
+.names .a{display:block;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(28px,7vw,38px);margin:2px 0}
+.mini-hands{width:110px;margin:0 auto;display:block}
+.line{font-style:italic;font-size:clamp(19px,5vw,22px);line-height:1.5;color:var(--muted);margin:0 auto;max-width:28ch}
+.orn{display:flex;align-items:center;gap:12px;margin:clamp(14px,2.6vh,24px) auto;max-width:220px}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:var(--line)}
+.orn i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+.dates{display:grid;grid-template-columns:1fr 1px 1fr;align-items:center;gap:10px}
+.dates .sep{height:56px;background:var(--line)}
+.d-day{font-family:var(--display);font-weight:600;font-size:clamp(26px,7.4vw,34px);color:var(--ink);line-height:1.1}
+.d-mon{font-family:var(--sans);font-size:11px;letter-spacing:.25em;color:var(--gold);margin-top:2px}
+.d-time{font-family:var(--serif);font-size:19px;color:var(--muted);margin-top:4px}
+.addr{font-size:clamp(18px,4.8vw,20px);line-height:1.45;margin:0;color:var(--ink)}
+.addr small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.25em;color:var(--gold);margin-bottom:4px}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:clamp(16px,3vh,26px)}
+.sign{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--muted);margin:clamp(14px,2.4vh,22px) 0 0}
+
+.music{position:fixed;right:20px;bottom:calc(22px + env(safe-area-inset-bottom,0px));z-index:15;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--gold);background:#fff;color:var(--gold-d);font-size:18px;display:none;align-items:center;justify-content:center}
+.music.on{display:flex}
+.music.playing{animation:pulse 2s ease-out infinite}
+.music.playing span{display:inline-block;animation:spin 4s linear infinite}
+.music:not(.playing){opacity:.7}
+.music:not(.playing)::after{content:"";position:absolute;width:24px;height:1.5px;background:var(--gold-d);transform:rotate(-45deg)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(176,132,54,.45)}100%{box-shadow:0 0 0 14px rgba(176,132,54,0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.toast{position:fixed;left:50%;bottom:calc(80px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-family:var(--sans);font-size:12px;opacity:0;transition:all .3s;z-index:30;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.cv-text>*,.card>*{opacity:1;transform:none}}
+</style>
+</head>
+<body class="locked">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="corner" viewBox="0 0 58 58"><g fill="none" stroke="#b08436" stroke-width="1.2"><path d="M4 54V12Q4 4 12 4H54"/><path d="M10 54V18Q10 10 18 10H54" opacity=".5"/><path d="M4 22 Q16 22 22 16 Q28 10 28 4"/></g><circle cx="22" cy="22" r="2.5" fill="#b08436"/></symbol>
+  </defs>
+</svg>
+
+<canvas id="spark" aria-hidden="true"></canvas>
+
+<div class="cover" id="cover">
+  <div class="emo" aria-hidden="true">
+    <span class="heart-e">💛</span>
+    <span class="eh el">🫱🏻</span><span class="eh er">🫲🏼</span>
+    <span class="eh es">🫱🏻&#8205;🫲🏼</span>
+  </div>
+  <div class="cv-text">
+    <p class="cv-names">Абдулла &amp; Айзирек</p>
+    <p class="cv-sub">ҮЙЛӨНҮҮ ТОЮНА ЧАКЫРУУ</p>
+    <div><button class="gbtn" id="openBtn">ЧАКЫРУУНУ АЧУУ</button></div>
+  </div>
+</div>
+
+<div class="frame" aria-hidden="true"></div>
+<svg class="corner tl" aria-hidden="true"><use href="#corner"/></svg>
+<svg class="corner tr" aria-hidden="true"><use href="#corner"/></svg>
+<svg class="corner bl" aria-hidden="true"><use href="#corner"/></svg>
+<svg class="corner br" aria-hidden="true"><use href="#corner"/></svg>
+
+<main class="page">
+  <div class="card">
+    <p class="kick">ҮЙЛӨНҮҮ ТОЮ</p>
+    <h1 class="names"><span class="n">Абдулла</span><span class="a">жана</span><span class="n">Айзирек</span></h1>
+    <p class="line">Ак никелүү тоюбузга кадырлуу коногубуз болуңуз!</p>
+    <div class="orn"><i></i></div>
+    <div class="dates">
+      <div><div class="d-day">30</div><div class="d-mon">ОКТЯБРЬ</div><div class="d-time">Жума · 17:30</div></div>
+      <div class="sep"></div>
+      <div><div class="d-day">31</div><div class="d-mon">ОКТЯБРЬ</div><div class="d-time">Ишемби · 10:00</div></div>
+    </div>
+    <div class="orn"><i></i></div>
+    <p class="addr"><small>ДАРЕГИБИЗ</small>Хонобод р., Бешковок МФЙ,<br>Бирдамлик көчөсү, 172-үй</p>
+    <div class="btns">
+      <a class="obtn" target="_blank" rel="noopener" href="https://yandex.uz/maps/?text=%D0%A5%D0%BE%D0%BD%D0%BE%D0%B1%D0%BE%D0%B4%20%D0%91%D0%B5%D1%88%D0%BA%D0%BE%D0%B2%D0%BE%D0%BA%20%D0%91%D0%B8%D1%80%D0%B4%D0%B0%D0%BC%D0%BB%D0%B8%D0%BA%20172">📍 КАРТАДАН АЧУУ</a>
+      <button type="button" class="gbtn" id="rsvp" style="padding:14px 24px;font-size:12px">✓ КЕЛЕМ</button>
+    </div>
+    <p class="sign">Урмат менен, Абдулла жана Айзирек</p>
+  </div>
+</main>
+
+<audio id="song" src="musiqa.m4a" loop preload="auto" playsinline></audio>
+<button type="button" class="music" id="musicBtn" aria-label="Музыканы өчүрүү"><span>♫</span></button>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  // Emoji qo'llar qo'llab-quvvatlanishini tekshirish
+  (function(){try{var c=document.createElement("canvas");c.width=c.height=40;var x=c.getContext("2d");x.font="32px sans-serif";x.textBaseline="top";x.fillText("\u{1FAF1}",0,0);
+    var d=x.getImageData(0,0,40,40).data,colored=false;for(var i=0;i<d.length;i+=4){if(d[i+3]>0&&(Math.abs(d[i]-d[i+1])>20||Math.abs(d[i+1]-d[i+2])>20)){colored=true;break;}}
+    if(!colored){var e=document.querySelector(".emo");e.classList.add("basic");e.querySelector(".es").textContent="\u{1F91D}";}}catch(err){}})();
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var cover=document.getElementById("cover"),song=document.getElementById("song"),mBtn=document.getElementById("musicBtn");
+  var toastEl=document.getElementById("toast"),tt;
+  function toast(m){toastEl.textContent=m;toastEl.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){toastEl.classList.remove("show")},2200);}
+
+  function setM(p){mBtn.classList.toggle("playing",p);mBtn.setAttribute("aria-label",p?"Музыканы өчүрүү":"Музыканы күйгүзүү");}
+  function playSong(){mBtn.classList.add("on");song.volume=0;var pr=song.play();
+    if(pr&&pr.then){pr.then(function(){setM(true);var v=0;var f=setInterval(function(){v+=.05;if(v>=.85){v=.85;clearInterval(f);}song.volume=v;},120);}).catch(function(){setM(false);});}}
+  mBtn.addEventListener("click",function(){if(song.paused){song.volume=.85;song.play().then(function(){setM(true)}).catch(function(){});}else{song.pause();setM(false);}});
+  document.addEventListener("visibilitychange",function(){if(document.hidden&&!song.paused){song.pause();song.dataset.resume="1";}else if(!document.hidden&&song.dataset.resume){song.dataset.resume="";song.play().then(function(){setM(true)}).catch(function(){setM(false)});}});
+
+  document.getElementById("openBtn").addEventListener("click",function(){
+    playSong();cover.classList.add("gone");document.body.classList.remove("locked");document.body.classList.add("opened");
+    var items=document.querySelectorAll(".card>*");items.forEach(function(el,i){el.style.transitionDelay=(0.3+i*0.15)+"s";});
+  });
+
+  document.getElementById("rsvp").addEventListener("click",function(){
+    var msg="✅ Тойго келем!\n\nАбдулла жана Айзирек, 30–31-октябрь, Бирдамлик көчөсү 172-үй.\n\nКуттуктайм!";
+    window.open("https://t.me/share/url?url="+encodeURIComponent(location.href.split("#")[0])+"&text="+encodeURIComponent(msg),"_blank","noopener");
+    toast("Рахмат! Сизди күтөбүз");
+  });
+
+  // Altyn uchqunlar
+  (function(){
+    if(reduce)return;var cv=document.getElementById("spark"),ctx=cv.getContext("2d"),W,H,dpr=Math.min(window.devicePixelRatio||1,2),ps=[];
+    function size(){W=window.innerWidth;H=window.innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
+    size();window.addEventListener("resize",size);
+    for(var i=0;i<34;i++)ps.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+.5,s:Math.random()*.35+.1,a:Math.random()*6.28,t:Math.random()*.02+.006});
+    (function loop(){ctx.clearRect(0,0,W,H);
+      ps.forEach(function(p){p.y-=p.s;p.a+=p.t;p.x+=Math.sin(p.a)*.3;if(p.y<-5){p.y=H+5;p.x=Math.random()*W;}
+        var o=.25+Math.sin(p.a*3)*.25;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fillStyle="rgba(201,162,78,"+Math.max(o,.06)+")";ctx.fill();});
+      requestAnimationFrame(loop);})();
+  })();
+})();
+</script>
+</body>
+</html>
